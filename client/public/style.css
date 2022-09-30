@@ -1,0 +1,46 @@
+*{
+    padding:0;
+    border:0;
+    box-sizing: border-box;
+
+}
+
+.main{
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width:800px;
+    height:60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid red;
+}
+input[type='file']{
+    width:100%;
+    height:30px;
+    margin:20px;
+}
+input[type='text']{
+    width:60%;
+    height:30;
+    padding:10px 20px;
+    margin:20px;
+
+    border:1px solid black;
+}
+.imageDisplay{
+    width:150px;
+    height:150px;
+    border:1px solid grey;
+    border-radius:50%;
+}
+.imageDisplay img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}

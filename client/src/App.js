@@ -1,23 +1,36 @@
+import {useState} from 'react'
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  
+  const [source,setSource]=useState(null)
+  const handleChange=(event)=>{
+    if (event.target.files && event.target.files[0]) {
+      setSource(URL.createObjectURL(event.target.files[0]));
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+       <div className="container">
+       <form>
+         <div className="imageDisplay">
+           <img src={source} />
+         </div>
+         <input type="file"
+                 accept=".png, .jpg, .jpeg"
+                 name="photo" 
+                 onChange={handleChange}
+               />
+          <input type="text" 
+                 placeholder="Enter Your Name"
+                 />
+          <input type="text" 
+                 placeholder="Enter Your Ages"
+                 />            
+
+       </form>
+       </div>  
     </div>
   );
 }
